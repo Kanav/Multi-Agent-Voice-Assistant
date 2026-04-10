@@ -22,7 +22,6 @@ Multi-Agent-Voice-Assistant/
 │   ├── __init__.py          # Package initializer
 │   ├── config.py            # Configuration and constants
 │   ├── data.py              # Base dataset (products, orders, policies)
-│   ├── data2.py             # Extended dataset with real-world examples
 │
 ├── requirements.txt         # Python dependencies
 ├── README.md                # Project documentation
@@ -110,8 +109,6 @@ You can run any Python module directly using:
 
 ```bash
 python -m src.data
-# or
-python -m src.data2
 ```
 
 This will load the static datasets and can be extended to integrate with the assistant logic.
@@ -121,14 +118,14 @@ This will load the static datasets and can be extended to integrate with the ass
 ## 🧪 Example Usage
 
 ```python
-from src import data2
+from src import data
 
 # Access product catalog
-for product in data2.PRODUCT_CATALOG:
+for product in data.PRODUCT_CATALOG:
     print(product["name"], "- ₹", product["price"])
 
 # Check order status
-order = data2.ORDER_DATABASE.get("ORD202")
+order = data.ORDER_DATABASE.get("ORD202")
 print(f"Order {order['product']} is currently {order['status']}")
 ```
 
